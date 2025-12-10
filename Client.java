@@ -106,7 +106,6 @@ public class Client {
 			wrapper.setBorder(new EmptyBorder(0, 8, 0, 8));
 			Bubble b = new Bubble(text, time, own ? new Color(0xD1E7DD) : new Color(0xE9ECEF));
 			wrapper.add(b);
-			// Prevent wrapper from stretching vertically in the BoxLayout
 			Dimension pref = wrapper.getPreferredSize();
 			wrapper.setMaximumSize(new Dimension(Integer.MAX_VALUE, pref.height));
 			wrapper.setAlignmentX(Component.LEFT_ALIGNMENT);
@@ -117,7 +116,6 @@ public class Client {
 				int value = bar.getValue();
 				int extent = bar.getVisibleAmount();
 				int maximum = bar.getMaximum();
-				// Only auto-scroll if user is already near the bottom
 				if (value + extent + 32 >= maximum) {
 					bar.setValue(maximum);
 				}
@@ -138,13 +136,11 @@ public class Client {
 				add(t, BorderLayout.CENTER);
 				setBorder(new EmptyBorder(0,4,0,4));
 				setOpaque(false);
-				final int maxWidth = 360; // limit bubble width for better wrapping
-				// compute preferred size based on constrained width
+				final int maxWidth = 360; 
 				t.setSize(maxWidth, Short.MAX_VALUE);
 				Dimension preferred = t.getPreferredSize();
 				preferred.width = Math.min(preferred.width, maxWidth);
 				setPreferredSize(new Dimension(preferred.width + 16, preferred.height + 18));
-				// small timestamp label below text
 				JLabel timeLabel = new JLabel(time);
 				timeLabel.setFont(new Font("Segoe UI", Font.PLAIN, 10));
 				timeLabel.setForeground(new Color(0x6C757D));

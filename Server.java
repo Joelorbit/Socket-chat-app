@@ -24,7 +24,6 @@ public class Server {
 		int port;
 		try { port = Integer.parseInt(portStr.trim()); } catch (Exception e) { return; }
 		final String name = JOptionPane.showInputDialog(null, "Your display name:", "Server");
-		// ensure a non-null display name
 		final String displayName = (name == null) ? "Server" : name;
 
 		JFrame waiting = new JFrame("Waiting");
@@ -121,7 +120,6 @@ public class Server {
 			wrapper.setBorder(new EmptyBorder(0, 8, 0, 8));
 			Bubble b = new Bubble(text, time, own ? new Color(0xD1E7DD) : new Color(0xE9ECEF));
 			wrapper.add(b);
-			// Prevent wrapper from stretching vertically in the BoxLayout
 			Dimension pref = wrapper.getPreferredSize();
 			wrapper.setMaximumSize(new Dimension(Integer.MAX_VALUE, pref.height));
 			wrapper.setAlignmentX(Component.LEFT_ALIGNMENT);
@@ -132,7 +130,6 @@ public class Server {
 				int value = bar.getValue();
 				int extent = bar.getVisibleAmount();
 				int maximum = bar.getMaximum();
-				// Only auto-scroll if user is already near the bottom
 				if (value + extent + 32 >= maximum) {
 					bar.setValue(maximum);
 				}
