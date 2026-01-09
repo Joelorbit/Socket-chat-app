@@ -10,7 +10,7 @@ It shows:
 
 - Quick way to test socket programming and a Swing chat UI.
 - Shows messages in neat rounded bubbles with timestamps and simple scrollback.
-- <img width="1640" height="972" alt="Screenshot 2025-12-11 210848" src="https://github.com/user-attachments/assets/e3adce5d-580a-4ffd-96c0-ec69dd945f78" />
+- <img width="1080" height="972" alt="Screenshot 2025-12-11 210848" src="https://github.com/user-attachments/assets/e3adce5d-580a-4ffd-96c0-ec69dd945f78" />
 
 
 Requirements
